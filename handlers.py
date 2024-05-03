@@ -5,7 +5,7 @@ from aiogram.dispatcher.filters import Command
 
 @dp.message_handler(Command('start'))
 async def start(message: types.Message):
-    await bot.send_message(message.chat.id, 'Тестируем WebApp!',
+    await bot.send_message(message.chat.id, 'Ожидаем  ваш заказ!',
                            reply_markup=keyboard)
 
 PRICE = {
