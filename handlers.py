@@ -1,12 +1,11 @@
 from main import bot, dp
 from keyboards import keyboard
-from aiogram import types
+from aiogram.types import Message
 from aiogram.dispatcher.filters import Command
 
 @dp.message_handler(Command('start'))
-async def start(message: types.Message):
-    await bot.send_message(message.chat.id, 'Ожидаем  ваш заказ!',
-                           reply_markup=keyboard)
+async def start(message: Message):
+    await message.answer('Ожидаем ваш заказ!', reply_markup=keyboard)
 
 PRICE = {
     '1': [types.LabeledPrice(label='Item1', amount=100000)],
